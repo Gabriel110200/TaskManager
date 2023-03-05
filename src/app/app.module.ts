@@ -8,6 +8,8 @@ import { ItemComponent } from './components/item/item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ButtonComponent,
     ItemComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule, 
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
