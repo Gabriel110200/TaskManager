@@ -13,14 +13,22 @@ export class ItemComponent implements OnInit {
   constructor(private taskService:TaskServiceService) { }
 
   ngOnInit(): void {
-
-    this.tasks = this.taskService.getTasks();
+  
+    this.taskService.getTasks().subscribe(tasks => this.tasks = tasks);
 
   }
 
-  Delete(item)
+  Delete(id)
   {
-      alert("trying to delete");
+    this.taskService.deleteTasks(id).subscribe(()=> 
+    this.tasks = this.tasks.filter(t => t.id !== id)
+    );
+
+  }
+
+  onToggle(task)
+  {
+    task.reminder = !task.reminder;
 
   }
 

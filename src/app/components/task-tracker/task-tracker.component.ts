@@ -10,6 +10,7 @@ export class TaskTrackerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
